@@ -9,7 +9,7 @@ export default function Banner(){
     const[trendingmovie,setmovie]=useState(null);
 
     useEffect(()=>{
-      axios.get('https://api.themoviedb.org/3/movie/popular?api_key=1de800cac43e850f2c391f9f393003d7').then(function(pro){
+      axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}`).then(function(pro){
         
         let ranmov=pro.data.results[Math.floor(Math.random()*20)];
         

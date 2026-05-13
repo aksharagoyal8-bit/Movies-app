@@ -21,7 +21,7 @@ export default function Movies({watchlist,addtowatch,removewatchlist}){
     localStorage.setItem("yourwatchlist",JSON.stringify(watchlist));
   },[watchlist]);
   useEffect(()=>{
-   axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=1de800cac43e850f2c391f9f393003d7&page=${page}`).then((res)=>{
+   axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}&page=${page}`).then((res)=>{
     setmov(res.data.results);
    })
   },[page])
